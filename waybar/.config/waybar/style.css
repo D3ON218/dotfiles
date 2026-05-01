@@ -1,0 +1,38 @@
+* {
+    font-family: "MS Sans Serif", "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: #c0c0c0; /* Gris Windows 95 */
+    border-top: 2px solid #ffffff;
+    color: #000000;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    background-color: #c0c0c0;
+    color: #000000;
+    border-left: 2px solid #ffffff;
+    border-top: 2px solid #ffffff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    margin: 2px;
+}
+
+#workspaces button.active {
+    background-color: #808080;
+    border-left: 2px solid #404040;
+    border-top: 2px solid #404040;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+
+#clock, #battery, #cpu, #memory {
+    padding: 0 10px;
+    color: #000000;
+    border-left: 2px solid #808080; /* Efecto hundido */
+    margin: 2px 5px;
+}

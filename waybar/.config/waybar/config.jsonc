@@ -1,0 +1,30 @@
+{
+    "layer": "top",
+    "position": "bottom", // Estilo barra de tareas clásica
+    "height": 30,
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["cpu", "memory", "battery", "tray"],
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate"
+    },
+
+    "clock": {
+        "format": "{:%H:%M:%S}",
+        "interval": 1,
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "battery": {
+        "states": { "warning": 30, "critical": 15 },
+        "format": "{capacity}% 🔋",
+        "format-charging": "{capacity}% ⚡",
+        "format-plugged": "{capacity}% 🔌",
+        "tooltip": false
+    },
+
+    "cpu": { "format": "CPU: {usage}%" },
+    "memory": { "format": "RAM: {}%" }
+}
