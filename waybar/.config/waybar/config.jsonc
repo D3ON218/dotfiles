@@ -1,30 +1,72 @@
 {
     "layer": "top",
-    "position": "bottom", // Estilo barra de tareas clásica
+    "position": "bottom", // Estilo barra de tareas clásica para estética Windows 95
     "height": 30,
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-center": ["clock"],
-    "modules-right": ["cpu", "memory", "battery", "tray"],
+    "spacing": 4, // Espaciado entre módulos para mayor claridad visual
+
+    // Orden de los módulos: El lanzador va primero a la izquierda
+    "modules-left": [
+        "custom/launcher", 
+        "hyprland/workspaces", 
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "cpu", 
+        "memory", 
+        "battery", 
+        "tray"
+    ],
+
+    // Módulo del Botón de Inicio (Arch Logo)
+    "custom/launcher": {
+        "format": "󰣇 Inicio", // Requiere una Nerd Font instalada
+        "on-click": "rofi -show drun", // Comando para abrir tu menú de aplicaciones
+        "tooltip": false
+    },
 
     "hyprland/workspaces": {
         "format": "{name}",
-        "on-click": "activate"
+        "on-click": "activate",
+        "all-outputs": true
+    },
+
+    "hyprland/window": {
+        "max-length": 50,
+        "separate-outputs": true
     },
 
     "clock": {
-        "format": "{:%H:%M:%S}",
+        "format": "{:%H:%M:%S}", // Formato de hora con segundos para precisión
         "interval": 1,
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
 
     "battery": {
-        "states": { "warning": 30, "critical": 15 },
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
         "format": "{capacity}% 🔋",
         "format-charging": "{capacity}% ⚡",
         "format-plugged": "{capacity}% 🔌",
         "tooltip": false
     },
 
-    "cpu": { "format": "CPU: {usage}%" },
-    "memory": { "format": "RAM: {}%" }
+    "cpu": {
+        "format": "CPU: {usage}%",
+        "interval": 2
+    },
+
+    "memory": {
+        "format": "RAM: {}%",
+        "interval": 5
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    }
 }
